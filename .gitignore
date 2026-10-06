@@ -1,0 +1,16 @@
+# Trained model checkpoints (regenerate by running the scripts)
+*.pt
+
+# Python
+__pycache__/
+*.pyc
+
+# Environments and IDE
+venv/
+.venv/
+.idea/
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
