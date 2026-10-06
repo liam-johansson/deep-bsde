@@ -30,6 +30,8 @@ The network's terminal error is within about 5% of the floor set by the exact an
 
 ![Learned vs analytic Z](figures/black_scholes_z_validation.png)
 
+The fit is weakest in regions few paths reach, such as S < 85 at t = 0.25: the network is only trained where the simulated paths go, and early in the horizon the paths have not yet spread far from S₀.
+
 The terminal error cannot reach zero even with a perfect network: holding $\Delta$ fixed over each step is discrete hedging, and its error shrinks like $N^{-1/2}$. `discretization_check.py` measures this floor using the exact analytic $Z$: the error falls from about 2.6 at $N = 10$ to 0.42 at $N = 400$, a factor of about 6.2 for 40× more steps ($\sqrt{40} \approx 6.3$).
 
 ![Discrete hedging error](figures/discretization_error.png)
